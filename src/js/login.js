@@ -31,7 +31,8 @@ function loaded() {
     quickLoaded = true;
 
     $(".bumperLoaderAnimation").fadeOut(1000);
-    $(".accessibilityOptionsButton").css("bottom", "0");
+    $(".accessibilityOptionsButton").show();
+    $(".accessibilityOptionsButton").css("bottom", "-5px");
     $(".accessibilityOptionsButton").attr("tabindex", "0");
     $(".copyrightInformation").fadeIn(500);
 
@@ -48,3 +49,13 @@ function loaded() {
 setTimeout(function() {
     loaded();
 }, 5000);
+
+function openAccessibilityOptions() {
+    $(".accessibilityOptionsButton").css("bottom", "120px");
+    $(".accessibilityOptionsMenu").css("bottom", "10px");
+}
+
+function closeAccessibilityOptions() {
+    $(".accessibilityOptionsButton").css("bottom", "-5px");
+    $(".accessibilityOptionsMenu").css("bottom", "-120px");
+}

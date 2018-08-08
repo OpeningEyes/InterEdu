@@ -42,12 +42,15 @@ body {
 
 .accessibilityOptionsButton {
     position: absolute;
+    display: none;
     bottom: -50px;
     left: 10px;
     padding: 10px;
+    padding-bottom: 15px;
     background-color: #d2d2d2;
     border-radius: 10px 10px 0 0;
     cursor: pointer;
+    z-index: 99998;
     transition: 1s;
     outline: none;
 }
@@ -56,10 +59,32 @@ body {
     background-color: #e5e5e5;
 }
 
+.accessibilityOptionsMenu {
+    position: absolute;
+    bottom: -120px;
+    left: 10px;
+    width: calc(100vw - 40px);
+    height: 100px;
+    padding: 10px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    text-align: left;
+    overflow-x: auto;
+    overflow-y: hidden;
+    z-index: 99999;
+    transition: 1s;
+}
+
+.accessibilityOptionsClose {
+    position: fixed;
+    right: 20px;
+}
+
 .copyrightInformation {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    z-index: -1;
     display: none;
 }
 
@@ -71,5 +96,17 @@ body {
 
     .loginInput {
         width: calc(100% - 30px);
+    }
+}
+
+@media (max-width: 400px) {
+    .copyrightInformation {
+        font-size: 10px;
+    }
+}
+
+@media(max-height: 650px) {
+    .bumper {
+        height: 60px;
     }
 }
