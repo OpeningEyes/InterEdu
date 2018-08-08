@@ -43,7 +43,7 @@ body {
 .accessibilityOptionsButton {
     position: absolute;
     display: none;
-    bottom: -50px;
+    bottom: -55px;
     left: 10px;
     padding: 10px;
     padding-bottom: 15px;

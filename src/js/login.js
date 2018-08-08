@@ -1,6 +1,8 @@
 var quickLoaded = false;
 
 $(function() {
+    $(".accessibilityOption").attr("tabindex", "-1");
+
     $(".bumperLoaderAnimation").hide();
 
     $(".bumperLoaderAnimation").css("width", $(".bumper").width() + 40);
@@ -32,9 +34,11 @@ function loaded() {
 
     $(".bumperLoaderAnimation").fadeOut(1000);
     $(".accessibilityOptionsButton").show();
-    $(".accessibilityOptionsButton").css("bottom", "-5px");
-    $(".accessibilityOptionsButton").attr("tabindex", "0");
-    $(".copyrightInformation").fadeIn(500);
+
+    setTimeout(function() {
+        $(".accessibilityOptionsButton").css("bottom", "-5px");
+        $(".copyrightInformation").fadeIn(500);
+    }, 250);
 
     setTimeout(function() {
         $(".bumperContainer").css("top", "10vh");
@@ -51,11 +55,21 @@ setTimeout(function() {
 }, 5000);
 
 function openAccessibilityOptions() {
-    $(".accessibilityOptionsButton").css("bottom", "120px");
-    $(".accessibilityOptionsMenu").css("bottom", "10px");
+    $(".accessibilityOptionsMenu").css("display", "unset");
+
+    setTimeout(function() {
+        $(".accessibilityOptionsButton").css("bottom", "120px");
+        $(".accessibilityOptionsMenu").css("bottom", "10px");
+        $(".accessibilityOption").attr("tabindex", "0");
+    }, 250);
 }
 
 function closeAccessibilityOptions() {
     $(".accessibilityOptionsButton").css("bottom", "-5px");
     $(".accessibilityOptionsMenu").css("bottom", "-120px");
+    $(".accessibilityOption").attr("tabindex", "-1");
+
+    setTimeout(function() {
+        $(".accessibilityOptionsMenu").css("display", "none");
+    }, 750);
 }
