@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Arvo|Lato|Material+Icons" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
         <script src="js/login.js"></script>
     </head>
     <body>
@@ -21,14 +22,23 @@
             </div>
         </div>
         <div class="bumperLoaderAnimation"></div>
-        <a href="javascript:openAccessibilityOptions();" class="accessibilityOptionsButton noLink"><i class="material-icons">accessibility</i></a>
+        <a href="javascript:openAccessibilityOptions();" aria-label="Open accessibility options" class="accessibilityOptionsButton noLink"><i class="material-icons">accessibility</i></a>
         <div class="accessibilityOptionsMenu">
-            <a href="javascript:closeAccessibilityOptions();" class="accessibilityOptionsClose accessibilityOption noLink"><i class="material-icons">close</i></a>
+            <a href="javascript:closeAccessibilityOptions();" aria-label="Close accessibility options" class="accessibilityOptionsClose accessibilityOption noLink"><i class="material-icons">close</i></a>
+            <div class="accessibilityGroup">
+                Overlays<br>
+                <a href="javascript:changeOverlay(0);" class="accessibilityGroupItem accessibilityOption noLink">None</a>
+                <a href="javascript:changeOverlay(1);" style="background-color: rgb(76.5, 178.5, 76.5);" class="accessibilityGroupItem accessibilityOption noLink">Green</a>
+                <a href="javascript:changeOverlay(2);" style="background-color: rgb(178.5, 178.5, 76.5);" class="accessibilityGroupItem accessibilityOption noLink">Yellow</a>
+                <a href="javascript:changeOverlay(3);" style="background-color: rgb(76.5, 76.5, 178.5);" class="accessibilityGroupItem accessibilityOption noLink">Blue</a>
+                <a href="javascript:changeOverlay(4);" style="background-color: rgb(178.5, 76.5, 76.5);" class="accessibilityGroupItem accessibilityOption noLink">Red</a>
+            </div>
         </div>
         <div class="copyrightInformation">
             Copyright &copy; Opening Eyes. All Rights Reserved.<br>
             Visit <a href="http://oconnor.technology" target="_blank">oconnor.technology</a> for more information.<br>
             Sponsored by LiveG Technologies (<a href="https://liveg.tech" target="_blank">liveg.tech</a>).
         </div>
+        <div class="accessibilityOverlay"></div>
     </body>
 </html>

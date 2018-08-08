@@ -50,7 +50,7 @@ body {
     background-color: #d2d2d2;
     border-radius: 10px 10px 0 0;
     cursor: pointer;
-    z-index: 99998;
+    z-index: 99997;
     transition: 1s;
     outline: none;
 }
@@ -71,13 +71,32 @@ body {
     text-align: left;
     overflow-x: auto;
     overflow-y: hidden;
-    z-index: 99999;
+    white-space: nowrap;
+    z-index: 99998;
     transition: 1s;
 }
 
 .accessibilityOptionsClose {
     position: fixed;
     right: 20px;
+}
+
+.accessibilityGroup {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+}
+
+.accessibilityGroupItem {
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    vertical-align: top;
 }
 
 .copyrightInformation {

@@ -62,3 +62,15 @@ button.secondary:hover {
 .title {
     font-family: "Arvo", slab, sans-serif;
 }
+
+.accessibilityOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 99999;
+    transition: 2s;
+}
