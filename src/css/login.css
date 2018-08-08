@@ -1,0 +1,75 @@
+body {
+    text-align: center;
+    overflow: hidden;
+}
+
+.bumperContainer {
+    position: absolute;
+    top: 20vh;
+    width: calc(100vw - 18px);
+    transition: 2s;
+}
+
+.bumper {
+    height: 20%;
+    transition: 1s;
+}
+
+.loginItem {
+    position: relative;
+    display: none;
+    left: 30%;
+    width: calc(40% - 18px);
+    padding: 10px;
+    margin-top: 18px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+}
+
+.loginInput {
+    width: calc(50% - 30px);
+}
+
+.bumperLoaderAnimation {
+    position: absolute;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(104, 202, 242, 0) 100%);
+    transform: rotate(135deg);
+}
+
+.login {
+    display: none;
+}
+
+.accessibilityOptionsButton {
+    position: absolute;
+    bottom: -50px;
+    left: 10px;
+    padding: 10px;
+    background-color: #d2d2d2;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    transition: 1s;
+    outline: none;
+}
+
+.accessibilityOptionsButton:focus {
+    background-color: #e5e5e5;
+}
+
+.copyrightInformation {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .loginItem {
+        left: 0;
+        width: calc(100% - 18px);
+    }
+
+    .loginInput {
+        width: calc(100% - 30px);
+    }
+}
