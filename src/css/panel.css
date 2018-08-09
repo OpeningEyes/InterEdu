@@ -64,6 +64,7 @@ html, body {
 .menuItem.bottom {
     position: fixed;
     bottom: 45px;
+    left: 0;
 }
 
 .logoContainer {
