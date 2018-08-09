@@ -4,25 +4,46 @@
         <title>OE InterEdu</title>
         <link rel="shortcut icon" type="image/png" href="res/logo.png">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="stylesheet" type="text/css" href="css/panel.css">
         <link href="https://fonts.googleapis.com/css?family=Arvo|Lato|Material+Icons" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/script.js"></script>
-        <script src="js/login.js"></script>
+        <script src="js/panel.js"></script>
     </head>
     <body>
-        <div class="bumperContainer">
-            <img src="res/bumper.png" alt="Opening Eyes logo" class="bumper" />
-            <div class="loginItem">
-                <h2>Log Into InterEdu</h2>
-                <input placeholder="Email" class="loginInput" id="email"></input>
-                <input type="password" placeholder="Password" class="loginInput" id="password"></input><br>
-                <button onclick="javascript:navigateTo('home.html');">Login</button><br>
-                <a href="#">Sign up</a> or <a href="#">recover password</a>
-            </div>
+        <div class="menuBar">
+            <a href="javascript:openMenu();" class="menuButton noLink">
+                <i class="menuButtonIcon material-icons">menu</i>
+            </a>
+            <div class="menuTitle title">Opening Eyes</div>
         </div>
-        <div class="bumperLoaderAnimation"></div>
+        <div class="menu">
+            <a onclick="javascript:navigateTo('home.html');" class="logoContainer noLink">
+                <img src="res/logo.png" alt="Opening Eyes logo" class="logo" />
+            </a>
+            <a href="javascript:closeMenu(); navigateTo('home.html');" class="menuItem noLink" tooltip="Home">
+                <i class="material-icons">home</i>
+            </a>
+            <a href="javascript:closeMenu(); navigateTo('assignments.html');" class="menuItem noLink" tooltip="Assignments">
+                <i class="material-icons">assignment</i>
+            </a>
+            <a href="javascript:closeMenu(); navigateTo('history.html');" class="menuItem noLink" tooltip="Previous Work">
+                <i class="material-icons">history</i>
+            </a>
+            <a href="javascript:closeMenu(); navigateTo('ask.html');" class="menuItem noLink" tooltip="Ask a Teacher">
+                <i class="material-icons">live_help</i>
+            </a>
+            <a href="javascript:closeMenu(); navigateTo('index.html');" class="menuItem bottom noLink" tooltip="Logout">
+                <i class="material-icons">https</i>
+            </a>
+        </div>
+        <a href="javascript:closeMenu();" class="menuBackground"></a>
+        <div class="content">
+            <h1 class="title">Home</h1>
+            <p>It's looking good!</p>
+        </div>
+        <div class="menuTooltip"></div>
         <a href="javascript:openAccessibilityOptions();" aria-label="Open accessibility options" class="accessibilityOptionsButton noLink"><i class="material-icons">accessibility</i></a>
         <div class="accessibilityOptionsMenu">
             <a href="javascript:closeAccessibilityOptions();" aria-label="Close accessibility options" class="accessibilityOptionsClose accessibilityOption noLink"><i class="material-icons">close</i></a>
@@ -40,11 +61,6 @@
                 <a href="javascript:changeTextSize(1);" style="font-size: 20px;" class="accessibilityGroupItem accessibilityOption noLink">Larger</a>
                 <a href="javascript:changeTextSize(2);" style="font-size: 24px;" class="accessibilityGroupItem accessibilityOption noLink">Largest</a>
             </div>
-        </div>
-        <div class="copyrightInformation">
-            Copyright &copy; Opening Eyes. All Rights Reserved.<br>
-            Visit <a href="http://oconnor.technology" target="_blank">oconnor.technology</a> for more information.<br>
-            Sponsored by LiveG Technologies (<a href="https://liveg.tech" target="_blank">liveg.tech</a>).
         </div>
         <div class="accessibilityOverlay"></div>
     </body>

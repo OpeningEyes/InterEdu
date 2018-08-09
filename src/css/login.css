@@ -1,4 +1,4 @@
-body {
+html, body {
     text-align: center;
     overflow: hidden;
 }
@@ -41,62 +41,8 @@ body {
 }
 
 .accessibilityOptionsButton {
-    position: absolute;
     display: none;
     bottom: -55px;
-    left: 10px;
-    padding: 10px;
-    padding-bottom: 15px;
-    background-color: #d2d2d2;
-    border-radius: 10px 10px 0 0;
-    cursor: pointer;
-    z-index: 99997;
-    transition: 1s;
-    outline: none;
-}
-
-.accessibilityOptionsButton:focus {
-    background-color: #e5e5e5;
-}
-
-.accessibilityOptionsMenu {
-    position: absolute;
-    bottom: -120px;
-    left: 10px;
-    width: calc(100vw - 40px);
-    height: 100px;
-    padding: 10px;
-    background-color: #e5e5e5;
-    border-radius: 10px;
-    text-align: left;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    z-index: 99998;
-    transition: 1s;
-}
-
-.accessibilityOptionsClose {
-    position: fixed;
-    right: 20px;
-}
-
-.accessibilityGroup {
-    display: inline-block;
-    height: 100%;
-    vertical-align: top;
-}
-
-.accessibilityGroupItem {
-    display: inline-block;
-    width: 80px;
-    height: 50px;
-    padding: 10px;
-    margin: 5px;
-    background-color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    vertical-align: top;
 }
 
 .copyrightInformation {

@@ -5,7 +5,8 @@ $(function() {
 
     $(".bumperLoaderAnimation").hide();
 
-    $(".bumperLoaderAnimation").css("width", $(".bumper").width() + 40);
+    // 10px added to width to fix sizing issues on Microsoft Edge.
+    $(".bumperLoaderAnimation").css("width", $(".bumper").width() + 50);
     $(".bumperLoaderAnimation").css("height", $(".bumper").height() + 40);
 
     setInterval(function() {
@@ -30,6 +31,7 @@ $(function() {
 });
 
 function loaded() {
+    // Stop bumperLoaderAnimation from showing if loaded before 2000ms.
     quickLoaded = true;
 
     $(".bumperLoaderAnimation").fadeOut(1000);
@@ -53,23 +55,3 @@ function loaded() {
 setTimeout(function() {
     loaded();
 }, 5000);
-
-function openAccessibilityOptions() {
-    $(".accessibilityOptionsMenu").css("display", "unset");
-
-    setTimeout(function() {
-        $(".accessibilityOptionsButton").css("bottom", "120px");
-        $(".accessibilityOptionsMenu").css("bottom", "10px");
-        $(".accessibilityOption").attr("tabindex", "0");
-    }, 250);
-}
-
-function closeAccessibilityOptions() {
-    $(".accessibilityOptionsButton").css("bottom", "-5px");
-    $(".accessibilityOptionsMenu").css("bottom", "-120px");
-    $(".accessibilityOption").attr("tabindex", "-1");
-
-    setTimeout(function() {
-        $(".accessibilityOptionsMenu").css("display", "none");
-    }, 750);
-}

@@ -1,0 +1,143 @@
+html, body {
+    overflow: hidden;
+}
+
+.menuBar {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 65px;
+    z-index: 99996;
+    background-color: white;
+    border-bottom: 5px solid #e5e5e5;
+}
+
+.menuButton {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #168bd8;
+    color: white;
+}
+
+.menuTitle {
+    position: relative;
+    display: inline-block;
+    top: -5px;
+    font-size: 20px;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 100vh;
+    z-index: 99997;
+    background-color: #168bd8;
+}
+
+.menuItem {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: white!important;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.menuItem:hover {
+    background-color: #00d2ff;
+}
+
+.menuItem.bottom {
+    position: fixed;
+    bottom: 45px;
+}
+
+.logoContainer {
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.logo {
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+
+.menuTooltip {
+    position: fixed;
+    display: none;
+    left: 70px;
+    margin-top: 2px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e5e5e5;
+}
+
+.menuBackground {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99996;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    position: fixed;
+    top: 0;
+    left: 65px;
+    width: calc(100vw - 65px);
+    height: 100vh;
+    margin: 20px;
+    overflow: auto;
+}
+
+@media (min-width: 701px) {
+    .menu {
+        display: block!important;
+    }
+
+    .menuBackground {
+        display: none!important;
+    }
+}
+
+@media (max-width: 700px) {
+    .menuBar {
+        display: unset;
+    }
+
+    .menu {
+        display: none;
+    }
+    
+    .menuTooltip {
+        display: none!important;
+    }
+
+    .content {
+        left: 0;
+        width: 100vw;
+        margin-top: 65px;
+    }
+}
