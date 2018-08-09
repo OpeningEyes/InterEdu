@@ -27,6 +27,7 @@ input {
     padding: 5px;
     margin: 5px;
     border-radius: 10px;
+    transition: 0.5s;
 }
 
 input:focus {
