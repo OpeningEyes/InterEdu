@@ -30,4 +30,8 @@ $(function() {
     $(".menuItem").mouseleave(function() {
         hideTooltip();
     });
+
+    setTimeout(function() {
+        $(".content").css("transition", "2s font-size");
+    }, 250);
 });
