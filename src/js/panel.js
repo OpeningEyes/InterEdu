@@ -1,3 +1,5 @@
+var isTeacher = false;
+
 function openMenu() {
     $(".menu").fadeIn(500);
     $(".menuBackground").fadeIn(1000);
@@ -30,6 +32,12 @@ $(function() {
     $(".menuItem").mouseleave(function() {
         hideTooltip();
     });
+
+    if (isTeacher) {
+        $(".teacher").show();
+    } else {
+        $(".pupil").show();
+    }
 
     setTimeout(function() {
         $(".content").css("transition", "2s font-size");

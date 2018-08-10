@@ -117,6 +117,10 @@ html, body {
     overflow: auto;
 }
 
+.teacher, .pupil {
+    display: none;
+}
+
 @media (min-width: 701px) {
     .menu {
         display: block!important;
