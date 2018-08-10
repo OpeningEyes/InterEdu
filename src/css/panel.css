@@ -61,6 +61,10 @@ html, body {
     background-color: #00d2ff;
 }
 
+.menuItem.selected {
+    background-color: #00d2ff;
+}
+
 .menuItem.bottom {
     position: fixed;
     bottom: 45px;
