@@ -30,6 +30,14 @@ $(function() {
     }, 2000);
 });
 
+function switchLoginItem(mode) {
+    $(".loginItem").fadeOut(500);
+
+    setTimeout(function() {
+        $(".loginItem." + mode).fadeIn(500);
+    }, 500);
+}
+
 function loaded() {
     // Stop bumperLoaderAnimation from showing if loaded before 2000ms.
     quickLoaded = true;
@@ -47,7 +55,7 @@ function loaded() {
     }, 1000);
 
     setTimeout(function() {
-        $(".loginItem").fadeIn(500);
+        $(".loginItem.login").fadeIn(500);
         $("#username").focus();
     }, 1500);
 }

@@ -30,14 +30,14 @@ html, body {
     width: calc(50% - 30px);
 }
 
+.loginInput.full {
+    width: calc(100% - 36px);
+}
+
 .bumperLoaderAnimation {
     position: absolute;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0.8) 60%, rgba(104, 202, 242, 0) 100%);
     transform: rotate(135deg);
-}
-
-.login {
-    display: none;
 }
 
 .accessibilityOptionsButton {
@@ -60,7 +60,7 @@ html, body {
     }
 
     .loginInput {
-        width: calc(100% - 30px);
+        width: calc(100% - 36px);
     }
 }
 

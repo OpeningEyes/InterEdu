@@ -14,12 +14,27 @@
     <body>
         <div class="bumperContainer">
             <img src="res/bumper.png" alt="Opening Eyes logo" class="bumper" />
-            <div class="loginItem">
-                <h2>Log Into InterEdu</h2>
+            <div class="loginItem login">
+                <h2>Login to InterEdu</h2>
                 <input placeholder="Email" class="loginInput" id="email"></input>
                 <input type="password" placeholder="Password" class="loginInput" id="password"></input><br>
                 <button onclick="javascript:navigateTo('home.html');">Login</button><br>
-                <a href="#">Sign up</a> or <a href="#">recover password</a>
+                <a href="javascript:switchLoginItem('signUp');">Sign up</a> or <a href="#javascript:switchLoginItem('recover');">recover password</a>
+            </div>
+            <div class="loginItem signUp">
+                <h2>Sign up for InterEdu</h2>
+                <input placeholder="Full name" class="loginInput full" id="name"></input><br>
+                <input placeholder="Email" class="loginInput" id="email"></input>
+                <input type="password" placeholder="Password" class="loginInput" id="password"></input><br>
+                <button onclick="javascript:navigateTo('home.html');">Sign Up</button><br>
+                <a href="javascript:switchLoginItem('login');">Login</a> or <a href="javascript:switchLoginItem('recover');">recover password</a>
+            </div>
+            <div class="loginItem recover">
+                <h2>Recover password for for InterEdu</h2>
+                <p>Send an email to your inbox to change your password.</p>
+                <input placeholder="Email" class="loginInput full" id="email"></input><br>
+                <button onclick="javascript:navigateTo('home.html');">Recover Password</button><br>
+                <a href="javascript:switchLoginItem('login');">Login</a> or <a href="javascript:switchLoginItem('recover');">sign up</a>
             </div>
         </div>
         <div class="bumperLoaderAnimation"></div>
