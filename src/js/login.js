@@ -5,7 +5,7 @@ $(function() {
 
     $(".bumperLoaderAnimation").hide();
 
-    // 10px added to width to fix sizing issues on Microsoft Edge.
+    // 10px added to width to fix sizing issues on Microsoft Edge
     $(".bumperLoaderAnimation").css("width", $(".bumper").width() + 50);
     $(".bumperLoaderAnimation").css("height", $(".bumper").height() + 40);
 
@@ -38,8 +38,18 @@ function switchLoginItem(mode) {
     }, 500);
 }
 
+function login() {
+    if ($("#loginEmail").val().trim() != "" && $("#loginPassword").val() != "") {
+        firebase.auth().signInWithEmailAndPassword($("#loginEmail").val().trim(), $("#loginPassword").val()).catch(function(error) {
+            $("#loginError").text(error.messsage);
+        });
+    } else {
+        $("#loginError").text("Please enter all of your login details.");
+    }
+}
+
 function loaded() {
-    // Stop bumperLoaderAnimation from showing if loaded before 2000ms.
+    // Stop bumperLoaderAnimation from showing if loaded before 2000ms
     quickLoaded = true;
 
     $(".bumperLoaderAnimation").fadeOut(1000);
@@ -58,6 +68,16 @@ function loaded() {
         $(".loginItem.login").fadeIn(500);
         $("#username").focus();
     }, 1500);
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            if (getURLParameter("go") != null) {
+                navigateTo(getURLParameter("go"), true);
+            } else {
+                navigateTo("/src/home.html", true);
+            }
+        }
+    });
 }
 
 setTimeout(function() {

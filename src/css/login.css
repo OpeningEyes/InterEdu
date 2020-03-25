@@ -22,8 +22,6 @@ html, body {
     width: calc(40% - 18px);
     padding: 10px;
     margin-top: 18px;
-    background-color: #e5e5e5;
-    border-radius: 10px;
 }
 
 .loginInput {

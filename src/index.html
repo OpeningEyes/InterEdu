@@ -8,31 +8,37 @@
         <link href="https://fonts.googleapis.com/css?family=Arvo|Lato|Material+Icons" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
         <script src="js/script.js"></script>
         <script src="js/login.js"></script>
     </head>
     <body>
         <div class="bumperContainer">
             <img src="res/bumper.png" alt="Opening Eyes logo" class="bumper" />
-            <div class="loginItem login">
+            <div class="loginItem login card">
                 <h2>Login to InterEdu</h2>
-                <input placeholder="Email" class="loginInput" id="email"></input>
-                <input type="password" placeholder="Password" class="loginInput" id="password"></input><br>
-                <button onclick="javascript:navigateTo('home.html');">Login</button><br>
+                <input placeholder="Email" class="loginInput" id="loginEmail"></input>
+                <input type="password" placeholder="Password" class="loginInput" id="loginPassword"></input><br>
+                <button onclick="javascript:login();">Login</button><br>
                 <a href="javascript:switchLoginItem('signUp');">Sign up</a> or <a href="#javascript:switchLoginItem('recover');">recover password</a>
+                <p id="loginError"></p>
             </div>
             <div class="loginItem signUp">
                 <h2>Sign up for InterEdu</h2>
-                <input placeholder="Full name" class="loginInput full" id="name"></input><br>
-                <input placeholder="Email" class="loginInput" id="email"></input>
-                <input type="password" placeholder="Password" class="loginInput" id="password"></input><br>
+                <input placeholder="Full name" class="loginInput full" id="signUpName"></input><br>
+                <input placeholder="Email" class="loginInput" id="signUpEmail"></input>
+                <input type="password" placeholder="Password" class="loginInput" id="signUpPassword"></input><br>
                 <button onclick="javascript:navigateTo('home.html');">Sign Up</button><br>
                 <a href="javascript:switchLoginItem('login');">Login</a> or <a href="javascript:switchLoginItem('recover');">recover password</a>
             </div>
             <div class="loginItem recover">
                 <h2>Recover password for for InterEdu</h2>
                 <p>Send an email to your inbox to change your password.</p>
-                <input placeholder="Email" class="loginInput full" id="email"></input><br>
+                <input placeholder="Email" class="loginInput full" id="recoverEmail"></input><br>
                 <button onclick="javascript:navigateTo('home.html');">Recover Password</button><br>
                 <a href="javascript:switchLoginItem('login');">Login</a> or <a href="javascript:switchLoginItem('recover');">sign up</a>
             </div>

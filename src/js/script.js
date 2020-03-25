@@ -1,6 +1,16 @@
 var overlay = 0;
 var textSize = 0;
 
+var firebaseConfiguration = {
+    apiKey: "AIzaSyA2h0KK_oLDDmsV_aTM0xKMMKpeR9ZmLE8",
+    authDomain: "oe-interedu.firebaseapp.com",
+    databaseURL: "https://oe-interedu.firebaseio.com",
+    projectId: "oe-interedu",
+    storageBucket: "oe-interedu.appspot.com",
+    messagingSenderId: "868661937142",
+    appId: "1:868661937142:web:f8004ea071496a281afdd7"
+};
+
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
 }
@@ -39,13 +49,21 @@ function changeTextSize(mode) {
     $("body, input, button").css("font-size", modes[mode]);
 }
 
-function navigateTo(url) {
+function navigateTo(url, replaceHistory = false) {
     // Used instead of linking to normal pages so that accessibility is available on other pages.
 
+    var newLocation = "";
+
     if (url.includes("?")) {
-        window.location.href = url + "&overlay=" + overlay + "&textsize=" + textSize;
+        newLocation = url + "&overlay=" + overlay + "&textsize=" + textSize;
     } else {
-        window.location.href = url + "?overlay=" + overlay + "&textsize=" + textSize;
+        newLocation = url + "?overlay=" + overlay + "&textsize=" + textSize;
+    }
+
+    if (replaceHistory) {
+        window.location.replace(newLocation);
+    } else {
+        window.location.href = newLocation;
     }
 }
 
@@ -62,3 +80,5 @@ $(function() {
         $(".accessibilityOverlay").css("transition", "2s background-color");
     }, 250);
 });
+
+firebase.initializeApp(firebaseConfiguration);

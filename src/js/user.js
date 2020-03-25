@@ -1,4 +1,4 @@
-var isTeacher = false;
+var userAbout = {};
 
 function openMenu() {
     $(".menu").fadeIn(500);
@@ -24,6 +24,10 @@ function hideTooltip() {
     $(".menuTooltip").stop().fadeOut(250);
 }
 
+function logout() {
+    firebase.auth().signOut();
+}
+
 $(function() {
     $(".menuItem").mouseenter(function() {
         showTooltip($(this), $(this).attr("tooltip"));
@@ -33,13 +37,25 @@ $(function() {
         hideTooltip();
     });
 
-    if (isTeacher) {
-        $(".teacher").show();
-    } else {
-        $(".pupil").show();
-    }
-
     setTimeout(function() {
         $(".content").css("transition", "2s font-size");
     }, 250);
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            firebase.database().ref("users/" + user.uid + "/about").on("value", function(snapshot) {
+                userAbout = snapshot.val();
+
+                $(".loading").hide();
+
+                if (userAbout.teacher) {
+                    $(".teacher").show();
+                } else {
+                    $(".pupil").show();
+                }
+            });
+        } else {
+            navigateTo("/src/index.html?go=" + encodeURIComponent(window.location.href), true);
+        }
+    });
 });
